@@ -11,19 +11,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onClickLanzar"
-        android:text="Incrementar"
+        android:text="@string/lanzar_dado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.578" />
 
-    <TextView
-        android:id="@+id/textCounter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Usted ha presionado el botón 0 veces"
+    <ImageView
+        android:id="@+id/imageViewDice"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/dice"
         app:layout_constraintBottom_toTopOf="@+id/button1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dice_1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

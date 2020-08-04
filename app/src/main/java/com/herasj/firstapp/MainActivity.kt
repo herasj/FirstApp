@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     companion object {
-        var counter = 0
+        //var counter = 0
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,12 +19,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClickLanzar(view: View) {
-        //Log.d("AppDados",  "Presionado")
-        counter++
-        var textViewCounter : TextView = findViewById(R.id.textCounter)
-        textViewCounter.text = "Usted ha presionado el botón $counter veces"
-        textViewCounter.x +=1
-        textViewCounter.y +=1
-        //Toast.makeText(this, "Presionado $counter veces", Toast.LENGTH_SHORT ).show()
+        val dice = Dice(nlados = 6)
+        val diceFace: Int = dice.play()
+        Log.d("Valor", "La cara del dado es: $diceFace")
+        when(diceFace){
+            1 -> imageViewDice.setImageResource(R.drawable.dice_1)
+            2 -> imageViewDice.setImageResource(R.drawable.dice_2)
+            3 -> imageViewDice.setImageResource(R.drawable.dice_3)
+            4 -> imageViewDice.setImageResource(R.drawable.dice_4)
+            5 -> imageViewDice.setImageResource(R.drawable.dice_5)
+            6 -> imageViewDice.setImageResource(R.drawable.dice_6)
+        }
+        //counter++
+
     }
 }
